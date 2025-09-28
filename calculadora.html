@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calculadora - Distribuidora Enmanuel</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Tu CSS adicional -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="bg-dark text-white py-3 mb-4">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <h1 class="h3 mb-0">Distribuidora Enmanuel</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link text-white">Inicio</a>
+        <a href="calculadora.html" class="nav-link text-white">Calculadora</a>
+        <a href="catalogo.html" class="nav-link text-white">Catálogo</a>
+        <a href="entregas.html" class="nav-link text-white">Entregas</a>
+        <a href="contacto.html" class="nav-link text-white">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <h2 class="text-center mb-4">🧮 Calculadora de Cotización</h2>
+
+    <div class="card shadow-lg p-4 mb-4">
+      <form>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Tu nombre</label>
+          <input id="nombre" type="text" class="form-control" placeholder="Ej. Juan Pérez">
+        </div>
+
+        <div class="mb-3">
+          <label for="distrito" class="form-label">Distrito</label>
+          <input list="distritos" id="distrito" class="form-control" placeholder="Selecciona un distrito">
+          
+          <datalist id="distritos">
+            <option>Ancón</option>
+            <option>Ate</option>
+            <option>Barranco</option>
+            <option>Bellavista</option>
+            <option>Breña</option>
+            <option>Callao</option>
+            <option>Carabayllo</option>
+            <option>Carmen de la Legua-Reynoso</option>
+            <option>Chaclacayo</option>
+            <option>Chorrillos</option>
+            <option>Cieneguilla</option>
+            <option>Comas</option>
+            <option>El Agustino</option>
+            <option>Independencia</option>
+            <option>Jesús María</option>
+            <option>La Molina</option>
+            <option>La Perla</option>
+            <option>La Punta</option>
+            <option>La Victoria</option>
+            <option>Lima (Cercado de Lima)</option>
+            <option>Lince</option>
+            <option>Los Olivos</option>
+            <option>Lurín</option>
+            <option>Magdalena del Mar</option>
+            <option>Mi Perú</option>
+            <option>Miraflores</option>
+            <option>Pachacámac</option>
+            <option>Puente Piedra</option>
+            <option>Pueblo Libre</option>
+            <option>Punta Hermosa</option>
+            <option>Punta Negra</option>
+            <option>Rímac</option>
+            <option>San Bartolo</option>
+            <option>San Isidro</option>
+            <option>San Juan de Lurigancho</option>
+            <option>San Juan de Miraflores</option>
+            <option>San Luis</option>
+            <option>San Martín de Porres</option>
+            <option>San Miguel</option>
+            <option>Santa Anita</option>
+            <option>Santa Rosa</option>
+            <option>Santiago de Surco</option>
+            <option>Surquillo</option>
+            <option>Ventanilla</option>
+            <option>Villa El Salvador</option>
+            <option>Villa María del Triunfo</option>
+          </datalist>
+        </div>
+
+
+        <div class="mb-3">
+          <label for="material" class="form-label">Material</label>
+          <select id="material" class="form-select">
+            <option value="">-- Selecciona material --</option>
+            <option value="king kong 18 huecos">King Kong 18 Huecos</option>
+            <option value="king kong 18 hercules">King Kong 18 Hércules</option>
+            <option value="king kong 30% (infes)">King Kong 18 30% (INFES)</option>
+            <option value="pandereta raya">Pandereta Raya</option>
+            <option value="hueco 8">Hueco 8</option>
+            <option value="hueco 12">Hueco 12</option>
+            <option value="hueco 15">Hueco 15</option>
+            <option value="hueco 20">Hueco 20</option>
+            <option value="pastelero">Pastelero</option>
+            <option value="teja">Teja</option>
+            <option value="caravista 6">Caravista 6</option>
+            <option value="caravista 9">Caravista 9</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="cantidad" class="form-label">Cantidad (unidades)</label>
+          <input id="cantidad" type="number" class="form-control" placeholder="Ej. 1500" min="1">
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <button id="btnAgregar" type="button" class="btn btn-success">
+            ➕ Añadir al carrito
+          </button>
+          <button type="reset" class="btn btn-outline-secondary">Limpiar</button>
+        </div>
+      </form>
+
+      <div id="resultado" class="alert alert-info mt-4" role="alert" aria-live="polite">
+        ℹ️ Aquí aparecerá tu cotización.
+      </div>
+    </div>
+
+    <section class="card shadow-sm p-3" aria-labelledby="carritoTitle">
+      <h3 id="carritoTitle">🛒 Tu carrito</h3>
+      <div id="carrito" class="mt-2"></div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">© 2025 Distribuidora Enmanuel</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
